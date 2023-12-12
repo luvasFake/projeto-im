@@ -1,0 +1,23 @@
+.container-main {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    justify-content: center;
+    margin: 30px 32.5% 0;
+    position: fixed;
+    height: 80%;
+    text-align: center;
+    background-color: #c0a978;
+    border-radius: 50% 50% 0 0;
+    align-items: center;
+
+}
+
+p, h1 {
+    width: 60%;
+    margin: 25px 0;
+}
+
+p {
+    font-size: 12px;
+}
