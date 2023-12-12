@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nossas Roupas</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/descricao-produto.css">
+    <link rel="icon" href="./style/img/logo.jpeg">
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <ul class="header">
+            <li>
+                <a href="./index.html">Menu</a>
+            </li>
+            <li>
+                <a href="./produtos.html">Nossos produtos</a>
+            </li>
+            <li class="logo-container">
+                <span class="logo"></span>
+            </li>
+            <li>
+                <a href="#contact">Contato</a>
+            </li>
+            <li>
+                <a href="./historia.html">Historia</a>
+            </li>
+        </ul>
+    </header>
+
+    <section class="container-produto">
+        <div id="img-produto" class="imagem-produto">imagem</div>
+        <div class="descricao-produto">
+            <h2 id="nome-produto" class="nome-produto">nome produto</h2>
+            <p id="preco-produto" class="preco-produto">preco-produto</p>
+            <p class="texto-descricao-produto">Descrição do produto Lorem ipsum dolor, sit amet consectetur adipisicing
+                elit. Deleniti rerum quam, reiciendis, in facere accusantium exercitationem officiis porro sed nostrum
+                illo est totam. Libero, natus quia. Qui nulla eos amet!
+            </p>
+            <button class="comprar">Comprar</button>
+        </div>
+    </section>
+</body>
+<script>
+    var search = location.search.substring(1);
+    search = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
+    
+    document.getElementById("img-produto").style.backgroundImage = `url(.${search.img.replace(/[-]/g, '/')}.jpeg)`
+    document.getElementById("nome-produto").innerText = search.nome
+    document.getElementById("preco-produto").innerText = "R$ " + search.preco.replace("_", ",");
+</script>
+
+</html>

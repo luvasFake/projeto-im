@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nossas Roupas</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/produtos.css">
+	<link rel="icon" href="./style/img/logo.jpeg">
+</head>
+<body>
+	<!-- Cabeçalho -->
+	<header>
+		<ul class="header">
+            <li>
+                <a href="./index.html">Menu</a>
+            </li>
+            <li>
+                <a href="./produtos.html">Nossos produtos</a>
+            </li>
+            <li class="logo-container">
+                <span class="logo"></span>
+            </li>
+            <li>
+                <a href="#contact">Contato</a>
+            </li>
+            <li>
+                <a href="./historia.html">Historia</a>
+            </li>
+        </ul>
+	</header>
+	
+	<section class="produtos" id="produtos">
+		
+		<article class="produto colecao">
+			<h2>Cooleção</h2>
+		</article>
+
+		<article onclick="abrirProduto(this)" class="produto">
+			<h2>Vestido 2</h2>
+			<p>Preço: R$ 199,99</p>
+		</article>
+
+		<article onclick="abrirProduto(this)" class="produto">
+			<h2>Vestido 3</h2>
+			<p>Preço: R$ 299,99</p>
+		</article>
+
+		<article onclick="abrirProduto(this)" class="produto">
+			<h2>Vestido 4</h2>
+			<p>Preço: R$ 399,99</p>
+		</article>
+
+		<article onclick="abrirProduto(this)" class="produto">
+			<h2>Vestido 5</h2>
+			<p>Preço: R$ 499,99</p>
+		</article>
+
+        <article onclick="abrirProduto(this)" class="produto">
+			<h2>Vestido 5</h2>
+			<p>Preço: R$ 499,99</p>
+		</article>
+
+        <article onclick="abrirProduto(this)" class="produto">
+			<h2>Vestido 5</h2>
+			<p>Preço: R$ 499,99</p>
+		</article>
+
+        <article onclick="abrirProduto(this)" class="produto">
+			<h2>Vestido 5</h2>
+			<p>Preço: R$ 499,99</p>
+		</article>
+	</section>
+</body>
+<script>
+	
+	function abrirProduto(element) {
+		window.location.href = `./descricao-produto.html?nome=${element.children[0].innerText}&preco=${element.children[1].innerText.split(" ")[2].replace(".", "_")}&img=${element.style.backgroundImage.split(".")[1].replace(/[/]/g, "-")}`
+	}
+
+    for (let x = 1; x < document.getElementsByTagName("article").length; x++) {
+        document.getElementsByTagName("article")[x].style.backgroundImage = "url(./style/img/img" + (x + 1) + ".jpeg)"
+        document.getElementsByTagName("article")[x].children[0].innerText = "Produto " + (x + 1);
+        document.getElementsByTagName("article")[x].children[1].innerText = "Preço: R$ " + (Math.random() * 100).toFixed(2)
+
+    }
+
+</script>
+</html>
