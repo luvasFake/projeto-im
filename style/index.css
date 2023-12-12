@@ -4,13 +4,19 @@
     width: 35%;
     /* justify-content: center; */
     margin: 30px 32.5% 0;
-    position: fixed;
+    /* position: fixed; */
     height: 80%;
     text-align: center;
     background-color: #c0a978;
     border-radius: 50% 50% 0 0;
     align-items: center;
 
+}
+
+.container-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 p, h1 {
@@ -28,3 +34,7 @@ h1 {
     height: 20px;
     margin-top: 35px;
 }
+
+/* #myVideo {
+    position: fixed;
+  } */
